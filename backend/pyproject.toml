@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "ks-voice-agent-backend"
+version = "0.1.0"
+description = "KS Voice Agent — Phase 1 backend"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "python-multipart>=0.0.9",
+    "pipecat-ai[google,silero,deepgram,cartesia,webrtc]>=1.3.0",
+    "google-genai>=1.0.0",
+    "pydantic-settings>=2.3.0",
+    "python-dotenv>=1.0.0",
+    "aioice>=0.9.0",
+    "aiortc>=1.9.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
