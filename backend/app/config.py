@@ -39,11 +39,11 @@ class Settings(BaseSettings):
 
     host: str = "0.0.0.0"
     port: int = 8000
-    cors_origins: str = "http://localhost:5173,http://localhost:4173"
+    cors_origins_raw: str = "http://localhost:5173,http://localhost:4173"
 
     @property
     def cors_origins(self) -> List[str]:
-        return [o.strip() for o in self.cors_origins.split(",") if o.strip()]
+        return [o.strip() for o in self.cors_origins_raw.split(",") if o.strip()]
 
     @model_validator(mode="after")
     def _require_provider_keys(self) -> "Settings":
